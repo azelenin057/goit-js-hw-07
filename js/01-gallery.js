@@ -1,8 +1,5 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
-
-console.log(galleryItems);
-
 const list = document.querySelector(".gallery");
 
 list.insertAdjacentHTML("beforeend", createMarkup(galleryItems));
@@ -26,9 +23,9 @@ function createMarkup(arr) {
     .join("");
 }
 
-list.addEventListener("click", onImageClick);
+list.addEventListener("click", handleClick);
 
-function onImageClick(event) {
+function handleClick(event) {
   event.preventDefault();
   if (event.target.nodeName !== "IMG") {
     return;
