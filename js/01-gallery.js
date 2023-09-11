@@ -35,9 +35,17 @@ function handleClick(event) {
   );
   instance.show();
 
-  list.addEventListener("keydown", (event) => {
+  //   list.addEventListener("keydown", (event) => {
+  //     if (event.code === "Escape") {
+  //       instance.close();
+  //     }
+  //   });
+  document.addEventListener("keydown", onEscClick);
+
+  function onEscClick(event) {
     if (event.code === "Escape") {
       instance.close();
+      document.removeEventListener("keydown", onEscClick);
     }
-  });
+  }
 }
